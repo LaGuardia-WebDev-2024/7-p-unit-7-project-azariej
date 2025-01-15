@@ -4,22 +4,42 @@ void setup() {
 }
 
 //🎯Variable Declarations Go Here
-var fireworkX = 20;
+var firework1 = 20;
+
+var firework2 = 20;
+
+var firework3 = 20;
 
 //🟢Draw Procedure - Runs on Repeat
 draw = function(){
  
+  
   background(255,255,255,0);
+
   
    if(mousePressed){
     showXYPositions();
     
+    if(firework1Size > 50){
+firework1Size = 20;
+}
+    
   }
   
   //🎯Animation Code Goes Here
-  rect(fireworkX, 15, 10, 10);
+ 
+ //firework line
+  fill(255, 255, 255);
+  rect(200,firework1, 10, 400);
   
-  fireworkX = fireworkX + 1;
+  // firework explosion
+  fill(255, 193, 185);
+  ellipse(200, 100, firework2, 100);
+  ellipse(300, 150, firework3, 100);
+  
+  firework2 += 1;
+  firework1 -= 5;
+  firework3 += 2;
 
 }
 
